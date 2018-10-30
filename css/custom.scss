@@ -1,0 +1,12 @@
+.flexbox-container {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    align-items: top;
+}
+
+.flexbox-container > div {
+    flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+}
