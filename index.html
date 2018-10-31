@@ -33,36 +33,194 @@
         </section>
         <section id="title" data-markdown>
             <textarea data-template>
-                # Title
-                **Subtitle**
+                ## SoC FPGA  Applications
+                **What are they used for and why might you care?**
                 ***
-                Speaker name
-
-                Event | Date
+                EELE 467 | Oct. 31 2018
             </textarea>
         </section>
-        <section id="outline" data-markdown>
+        <section data-markdown>
             <textarea data-template>
-                ## Outline
-                - section 1
-                - section 2
-                - section 3
+                ### What are we doing?
+                - using SoC FPGAs to learn embedded system design principles
+                - learning how to integrate custom hardware and software
+                - learning how to create custom embedded Linux systems
+            </textarea>
+        </section>
+        <section data-markdown>
+            <textarea data-template>
+                ### Why might you care?
+                - embdedded systems are getting increasingly complicated
+                - skillset
+                    - developers who can do hardware and software are in demand
+                    - few developers are conversant at all levels of the hw/sw stack
+                - the future of performance computing is likely heterogenous and application specific
             </textarea>
         </section>
         <section>
-            <h2>Slide 2</h2>
+            <h3>Where are we going?</h3>
             <div class="flexbox-container">
                 <div>
+                    <b>This semester</b>
                     <ul>
-                        <li>two columns!</li>
-                        <li>with an image</li>
-                        <li>and bullet points!</li>
+                        <li>boot/configure FPGA via NFS</li>
+                        <li>write a Linux device driver for LED state machine</li>
                     </ul>
                 </div>
                 <div>
-                    <img src="images/Tux.svg" />
+                    <b>Next semester</b>
+                    <ul>
+                        <li>focus on computatoinal application specific custom hw/sw</li>
+                        <li>create custom audio filter for audio daughter card</li>
+                        <img src="images/audio_daughter.jpg" />
+                    </ul>
                 </div>
             </div>
+        </section>
+        <section data-markdown>
+            <textarea data-template>
+                ### Reasons to use SoC FPGAs
+                - you need a processor and also need custom hw/peripherals
+                - you need high-performance computation but still want the conviences of a traditional cpu
+                    - judicious hw/sw partitioning results in high-performance and ease of use
+                - development cycle for an ASIC is too long for your rapidly evovling market
+            </textarea>
+        </section>
+        <section>
+            <section>
+                <h2> Applications </h2>
+            </section>
+            <section>
+                <h3> Some ideas </h3>
+                <div class="flexbox-container">
+                    <div>
+                        <b>Data center</b>
+                        <ul>
+                            <li>ML, netural networks, etc.</li>
+                            <li>workloads change over time</li>
+                            <li>FPGA fabric can be reconfigured on-the-fly for workload</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <b>Drones</b>
+                        <ul>
+                            <li>need a processor for control/communication</li>
+                            <li>FPGA fabric can be used to accelerate computer vision</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <b>Waterfall sorting</b>
+                        <ul>
+                            <li>GBps of camera data being processed in real-time</li>
+                            <li>SoC used for high-level control/interface</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h3>Project Brainwave</h3>
+                <ul>
+                    <li>Microsoft is putting regular FPGAs in their data centers to speed up AI for Bing/Azure</li>
+                    <li>has achieved up to 39.5 TFLOPS!</li>
+                </ul>
+                <img src="images/project_brainwave.jpg"/>
+                <p class="caption">
+                    <a href="https://www.microsoft.com/en-us/research/project/project-brainwave/">https://www.microsoft.com/en-us/research/project/project-brainwave/</a>
+                    <a href="https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/accelerating-artificial-intelligence-bing-whitepaper.pdf">https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/accelerating-artificial-intelligence-bing-whitepaper.pdf</a>
+
+                </p>
+            </section>
+        </section>
+        <section>
+            <section data-markdown>
+                <textarea data-template>
+                    ### Test and Measurement
+                    - used in multimeters, oscilloscopes, calibrators, etc.
+                    - relatively low-volume market
+                    - I worked in this field!
+                    <aside class="notes" data-markdown>
+                        - I worked as an embedded software engineer
+                        - on the digital side, we were trying to create a common hardware and software platform that could be used in future calibrators
+                        - having experience in both hw and sw helped a lot
+                    </aside>
+                </textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    #### Hypothetical Multimeter Design
+                    - interfaces
+                        - touchscreen
+                        - keypad
+                        - knobs
+                    - separate circuitry to measure voltage and current
+                </textarea>
+            </section>
+            <section>
+                <h4>Potential Architecture</h4>
+                <img src="images/multimeter_architecture.svg"/>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h3>Computational Assistive Hearing</h3>
+                <div class="flexbox-container">
+                    <div>
+                        <ul>
+                            <li>hearing loss sucks!</li>
+                            <li>computational ability in hearing aids is limited</li>
+                            <li>use <b>microphone arrays</b> and <b>SoC FPGAs</b> to solve the cocktail party problem</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="images/beamforming_hardware.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3>Cocktail Party Problem</h3>
+                <img src="images/cocktail_party_problem.jpg" />
+            </section>
+            <section data-transition="none">
+                <h3>Cocktail Party Problem</h3>
+                <img src="images/cocktail_party_problem_2.jpg" />
+            </section>
+            <section>
+                <h3>Spatial Filtering</h3>
+                <img src="images/beamforming1.svg" />
+                <p class="caption">
+                    Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+                </p>
+            </section>
+            <section data-transition="none">
+                <h3>Spatial Filtering</h3>
+                <img src="images/beamforming2.svg" />
+                <p class="caption">
+                    Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+                </p>
+            </section>
+            <section>
+                <h3>Architecture</h3>
+                <div class="flexbox-container">
+                    <div>
+                        <b>SoC</b>
+                        <ul>
+                            <li>allow users to select sources and steer the beamformer</li>
+                            <li>recieve/send data from/to a smartphone interface</li>
+                            <li>host a webpage interface</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <b>FPGA</b>
+                        <ul>
+                            <li>microphone array data capture</li>
+                            <li>beamforming calculations</li>
+                            <li>audio streaming</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </section>
       </div>
     </div>
